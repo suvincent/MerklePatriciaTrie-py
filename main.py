@@ -20,11 +20,11 @@ testcase6 = {'a711355' : '45', 'a711356' : '46', 'a711357' : '47', 'a77d337' : '
 from MPT import MerklePatriciaTrie
 
 Tests = []
-Tests.append(testcase6)
+Tests.append(testcase5)
 for Test in Tests:
     Tree = MerklePatriciaTrie()
     for item in Test:
         Tree.AddNode(item,Test[item])
-    Tree.AddNode('a711356' , '46')
-    Tree.UpdateValue('a711356' , '460')
+    # Tree.AddNode('a711356' , '46')
+    # Tree.UpdateValue('a711356' , '460')
     Tree.print()

@@ -12,7 +12,7 @@ class LeafNode(node):
         self.Addnode(k,v)
         
     def printNode(self, Level):
-        space = " " * Level
+        space = "    " * Level
         print(space,"LeafNode : ")
         if self.prefix == 2:
             print(space, ["20"+self.keyEnd,self.value])
@@ -33,7 +33,7 @@ class LeafNode(node):
         self.value = v
         self.HashNode()
         return self.hash
-        
+
     def HashNode(self):
         if self.prefix == 2:
             # print([bytes.fromhex("20"+self.keyEnd),self.value])

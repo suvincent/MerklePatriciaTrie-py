@@ -56,8 +56,9 @@ class MerklePatriciaTrie:
                 # 如果第一個address char就不一樣 root要換成Branch node
                 # 因為要換root 所以不放在extension node 處理放在MPT處理
                 tempBranch = BranchNode()
-                index = self.root.sharedNibble[0]
-                self.root.sharedNibble = self.root.sharedNibble[1,len(self.root.sharedNibble)]
+                index = int(self.root.sharedNibble[0])
+                self.root.ChangeShared(self.root.sharedNibble[1:len(self.root.sharedNibble)])
+                # self.root.sharedNibble = self.root.sharedNibble[1:len(self.root.sharedNibble)]
                 tempBranch.HexArray[index] = self.root
                 tempBranch.Addnode(address,value)
                 self.root = tempBranch

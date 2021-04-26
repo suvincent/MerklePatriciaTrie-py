@@ -15,7 +15,7 @@ class ExtensionNode(node):
 
         
     def printNode(self, Level):
-        space = " " * Level
+        space = "    " * Level
         print(space,"ExtensionNode : ")
         if self.prefix == 0:
             print(space, ["00"+self.sharedNibble])

@@ -10,14 +10,14 @@ class BranchNode(node):
         self.hash = ""
         
     def printNode(self, Level):
-        space = " " * Level
+        space = "    " * Level
         print(space,"BranchNode : ")
 
         for index in range(16):
             if self.HexArray[index] != "":
                 print(space ,index)
                 self.HexArray[index].printNode(Level + 1)
-        print(space, self.value)
+        print(space,self.value)
             
 
     def Addnode(self,k,v):
@@ -48,7 +48,7 @@ class BranchNode(node):
                 self.HexArray[index] = tempExtension
             # 若目前是ExtensionNode
             elif self.HexArray[index].__class__ == ExtensionNode:
-                self.HexArray[index].Addnode(k,v)
+                self.HexArray[index].Addnode(k[1:len(k)],v)
             
         
         else:
