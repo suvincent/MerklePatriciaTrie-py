@@ -1,11 +1,14 @@
 
-# Testcase: Root Hash = 5838ad5578f346f40d3e6b71f9a82ae6e5198dd39c52e18deec63734da512055
-testcase5 = {'a711355' : '45', 'a77d337' : '1', 'a7f9365' : '2', 'a77d397' : '12'}
-                                                                      #/                
+testcase = { '7c3002ad756d76a643cb09cd45409608abb642d9' : '10', 
+             '7c303333756d555643cb09cd45409608abb642d9' : '20', 
+             '7c303333756d777643cb09c999409608abb642d9' : '30', 
+             '7c303333756d777643cb09caaa409608abb642d9' : '40',
+             '111102ad756d76a643cb09cd45409608abb642d9' : '50'}
+                                                                                  
 from MPT import MerklePatriciaTrie
 
 Tests = []
-Tests.append(testcase5)
+Tests.append(testcase)
 for Test in Tests:
     Tree = MerklePatriciaTrie()
     for item in Test:
